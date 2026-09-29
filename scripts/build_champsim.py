@@ -4,6 +4,7 @@ import argparse
 import os
 from pathlib import Path
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PINS = {
@@ -27,6 +28,17 @@ def checkout(path, url, revision):
     if actual != revision:
         raise SystemExit(f'{path} is at {actual}; expected {revision}. Use a fresh --deps directory.')
 
+def library_prefix(deps, platform):
+    if platform == 'darwin' and Path('/opt/homebrew/include/lzma.h').exists():
+        return Path('/opt/homebrew')
+    # Upstream puts PREFIX/include into -isystem. Passing /usr here breaks
+    # GCC's #include_next ordering for standard headers such as stdlib.h.
+    # Leave system headers/libraries on the compiler's implicit search paths.
+    prefix = deps / 'system-prefix'
+    for directory in ('include', 'lib', 'lib/manual-link'):
+        (prefix / directory).mkdir(parents=True, exist_ok=True)
+    return prefix
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--deps', type=Path, default=ROOT / '.deps')
@@ -41,7 +53,10 @@ def main():
     # need linking; this generated make fragment leaves upstream source untouched.
     fragment = upstream / 'archlab.options.mk'
     fragment.write_text('override LDLIBS := -llzma -lz -lbz2\n')
-    prefix = '/opt/homebrew' if Path('/opt/homebrew/include/lzma.h').exists() else '/usr'
+    prefix = library_prefix(dep, sys.platform)
+    # This generated file has no make prerequisites; refresh it when the prefix
+    # changes, including retries after an earlier build with the old /usr prefix.
+    (upstream / 'absolute.options').unlink(missing_ok=True)
     cppflags = ' '.join(['-DFMT_HEADER_ONLY'] + [f'-I{dep / name / inc}' for name, inc in [('fmt','include'),('cli11','include'),('json','single_include')]])
     if ' ' in str(dep) or ' ' in str(ROOT):
         raise SystemExit('ChampSim make integration currently requires checkout paths without spaces.')

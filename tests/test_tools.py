@@ -10,6 +10,15 @@ def module(name):
     m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 synthetic=module('synthetic'); runner=module('run_champsim')
 class Tools(unittest.TestCase):
+    def test_linux_dependency_prefix_preserves_system_header_search(self):
+        builder=module('build_champsim')
+        with tempfile.TemporaryDirectory() as tmp:
+            deps=Path(tmp)
+            prefix=builder.library_prefix(deps, 'linux')
+            self.assertEqual(prefix, deps/'system-prefix')
+            self.assertTrue((prefix/'include').is_dir())
+            self.assertTrue((prefix/'lib/manual-link').is_dir())
+            self.assertEqual(list((prefix/'include').iterdir()), [])
     def test_all_workloads_deterministic_binary(self):
         self.assertGreater(len(synthetic.NAMES),12)
         for name in synthetic.NAMES:
