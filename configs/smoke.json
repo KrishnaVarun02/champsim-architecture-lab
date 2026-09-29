@@ -1,0 +1,21 @@
+{
+  "executable_name": "lab_ltage-lab_lru",
+  "ooo_cpu": [
+    {
+      "branch_predictor": "lab_ltage"
+    }
+  ],
+  "LLC": {
+    "replacement": "lab_lru",
+    "sets": 64,
+    "ways": 8
+  },
+  "L1D": {
+    "sets": 64,
+    "ways": 4
+  },
+  "L2C": {
+    "sets": 64,
+    "ways": 4
+  }
+}

@@ -1,0 +1,22 @@
+name: architecture-lab
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make test
+      - run: make synthetic
+      - run: make sanitize
+  champsim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y liblzma-dev zlib1g-dev libbz2-dev
+      - run: python3 scripts/build_champsim.py --jobs 2
+      - run: python3 scripts/synthetic.py --out build/synthetic
+      - run: python3 scripts/run_champsim.py --manifest build/synthetic/manifest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-champsim-results
+          path: build/champsim-runs

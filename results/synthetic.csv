@@ -1,0 +1,17 @@
+workload,kind,branches,bimodal_misses,ltage_misses,ltage_long_misses,memory_accesses,lru_misses,lfu_misses,fifo_misses
+alternating,synthetic,10000,5000,4,4,10000,256,256,256
+always_taken,synthetic,10000,32,16,16,10000,256,256,256
+conflict,synthetic,10000,1460,51,51,10000,10000,10000,10000
+correlated,synthetic,10000,4864,2596,2587,10000,256,256,256
+hot_set,synthetic,10000,1460,51,51,10000,538,538,556
+loop_127,synthetic,10000,80,5,5,10000,256,256,256
+loop_31,synthetic,10000,324,4,5,10000,256,256,256
+loop_7,synthetic,10000,1430,3,4,10000,256,256,256
+mixed_loops,synthetic,10000,592,188,172,10000,256,256,256
+never_taken,synthetic,10000,0,0,0,10000,256,256,256
+phase_change,synthetic,10000,288,56,61,10000,256,256,256
+pointer_chase,synthetic,10000,1460,51,51,10000,10000,10000,10000
+random_branch,synthetic,10000,5089,4994,5010,10000,256,256,256
+scan_pollution,synthetic,10000,1460,51,51,10000,1362,1362,1362
+skewed_hotset,synthetic,10000,1460,51,51,10000,3429,3168,3741
+streaming,synthetic,10000,1460,51,51,10000,10000,10000,10000

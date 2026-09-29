@@ -1,0 +1,191 @@
+[
+  {
+    "executable_name": "bimodal-lab_lru",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "bimodal"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_lru",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "bimodal-lab_lfu",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "bimodal"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_lfu",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "bimodal-lab_fifo",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "bimodal"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_fifo",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "lab_ltage-lab_lru",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "lab_ltage"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_lru",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "lab_ltage-lab_lfu",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "lab_ltage"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_lfu",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "lab_ltage-lab_fifo",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "lab_ltage"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_fifo",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "lab_ltage_long-lab_lru",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "lab_ltage_long"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_lru",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "lab_ltage_long-lab_lfu",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "lab_ltage_long"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_lfu",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  },
+  {
+    "executable_name": "lab_ltage_long-lab_fifo",
+    "ooo_cpu": [
+      {
+        "branch_predictor": "lab_ltage_long"
+      }
+    ],
+    "LLC": {
+      "replacement": "lab_fifo",
+      "sets": 64,
+      "ways": 8
+    },
+    "L1D": {
+      "sets": 64,
+      "ways": 4
+    },
+    "L2C": {
+      "sets": 64,
+      "ways": 4
+    }
+  }
+]

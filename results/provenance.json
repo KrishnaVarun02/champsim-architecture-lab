@@ -1,0 +1,165 @@
+{
+  "upstream_commit": "410cee62d9c429c043ea611325ce00e6c303be2a",
+  "dataset": "16 deterministic small synthetic workloads; no SAT captures",
+  "seed": 2023,
+  "instructions_per_trace": 20000,
+  "warmup_requested": 1000,
+  "simulation_requested": 10000,
+  "rows": 144,
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7",
+  "config_sha256": "4105e49c0ddf40fad220eec62c773265db257608ba660f05217e9559cf893003",
+  "traces": [
+    {
+      "name": "always_taken",
+      "path": "always_taken.champsimtrace",
+      "sha256": "7684af0595fac9a52a1c46909bf7f870f0dc050e4c5b2333daa4281d063f29fd",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "never_taken",
+      "path": "never_taken.champsimtrace",
+      "sha256": "67f8fd1936c234cad4436c1b99f046612ca8046756080b7270e6bec55ac5ebfa",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "alternating",
+      "path": "alternating.champsimtrace",
+      "sha256": "ce62e48d8030f6d7cf55ff0adf7acfdf6f2477d85df46b95d966c458a77350e0",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "loop_7",
+      "path": "loop_7.champsimtrace",
+      "sha256": "7dd113d6bfb70b32a92d6a96fa057d8706e2a9ff9f4f40acba78f6ca0e471387",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "loop_31",
+      "path": "loop_31.champsimtrace",
+      "sha256": "ec7a87ee32cba2065119e91f2deb63c48470989d6b0b9922223da49b34b67280",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "loop_127",
+      "path": "loop_127.champsimtrace",
+      "sha256": "11e0a8dcf0a8d170f07d7ebe199bc32c2e7e21ab94f6682a431ed65272d39c91",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "correlated",
+      "path": "correlated.champsimtrace",
+      "sha256": "1c479e0125b2ba246ecef92a571c0a17c1762eabde5f5c892beab26106ed17bf",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "random_branch",
+      "path": "random_branch.champsimtrace",
+      "sha256": "ca04b43050317d2ccf0d4af6617fbf51975f2689a63718e6f072faa5c55f378f",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "phase_change",
+      "path": "phase_change.champsimtrace",
+      "sha256": "db9e954afe872b2404266d744303a3ee4e9b90af4dbdc2355521897e0d857768",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "streaming",
+      "path": "streaming.champsimtrace",
+      "sha256": "a6fbda3c1d15976b6e4b4ac3e2157185e51dfa89809d606cb4d6c56ccf5d859c",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "hot_set",
+      "path": "hot_set.champsimtrace",
+      "sha256": "f5407e3fe6e081808063310fd6f7f3ef4a6a70fb0dffd11025dbf8bcf8c7344e",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "conflict",
+      "path": "conflict.champsimtrace",
+      "sha256": "45e7b54acf089a2b3edc9aa879254bb6eb283735ae1317872ae15441ab58f383",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "pointer_chase",
+      "path": "pointer_chase.champsimtrace",
+      "sha256": "d2d24fa28ebbb291d155006b289446f9826bb63db95a928daadf488c436053f2",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "scan_pollution",
+      "path": "scan_pollution.champsimtrace",
+      "sha256": "ed86ca216b0a87af6e9b867dce0ba3f1809793446bf1a5d22b3072c2418cec25",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "mixed_loops",
+      "path": "mixed_loops.champsimtrace",
+      "sha256": "08b98764489cc0bfd69f4e75d80204fd7a14726d81ed20bb78a9a32b43306b45",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    },
+    {
+      "name": "skewed_hotset",
+      "path": "skewed_hotset.champsimtrace",
+      "sha256": "c370b430f01ecf59c8aed7942ea21f0312cffd9efbfe7e11aa9298ef02c4c811",
+      "kind": "synthetic",
+      "split": "test",
+      "source": "scripts/synthetic.py",
+      "instructions": 20000
+    }
+  ],
+  "commands": [
+    "make test",
+    "make synthetic",
+    "python3 scripts/build_champsim.py --jobs 3",
+    "python3 scripts/run_champsim.py --manifest build/synthetic/manifest.json"
+  ]
+}
